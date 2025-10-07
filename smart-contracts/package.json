@@ -1,0 +1,53 @@
+{
+  "name": "nft-gaming-research-086-smart-contracts",
+  "version": "1.0.0",
+  "description": "Smart contracts for NFT Gaming Research 086 - Utility-first NFT gaming ecosystem",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "deploy:polygon": "hardhat run deployment/deploy-all.js --network polygon",
+    "deploy:polygon-testnet": "hardhat run deployment/deploy-all.js --network mumbai",
+    "verify:polygon": "hardhat run deployment/verify-contracts.js --network polygon",
+    "verify:polygon-testnet": "hardhat run deployment/verify-contracts.js --network mumbai",
+    "lint": "solhint 'contracts/**/*.sol'",
+    "lint:fix": "solhint 'contracts/**/*.sol' --fix",
+    "gas-report": "REPORT_GAS=true hardhat test",
+    "size": "hardhat size-contracts"
+  },
+  "keywords": [
+    "nft",
+    "gaming",
+    "blockchain",
+    "ethereum",
+    "polygon",
+    "solidity",
+    "smart-contracts",
+    "utility-nft",
+    "play-to-earn"
+  ],
+  "author": "NFT Gaming Research 086 Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.1",
+    "@nomiclabs/hardhat-etherscan": "^3.1.0",
+    "@openzeppelin/contracts": "^4.9.0",
+    "@openzeppelin/hardhat-upgrades": "^1.28.0",
+    "chai": "^4.3.7",
+    "ethereum-waffle": "^4.0.9",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.17.1",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.8.5",
+    "solhint": "^4.0.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  }
+}

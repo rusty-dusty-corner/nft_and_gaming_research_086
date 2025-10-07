@@ -1,0 +1,298 @@
+# NFT‑Utility Integration Plan for a Mobile RPG‑Strategy Game  
+**Goal:** Raise **€ 500 k‑€ 800 k** and deliver **real, tradable value** to NFT holders while keeping the core game free‑to‑play and balanced.
+
+---
+
+## 1. Executive Summary  
+
+| What | Why | How |
+|------|------|------|
+| **Utility‑first NFTs** (discounts, resource bonuses, passive income) | Gives holders a *tangible* economic advantage that can be bought, sold, or earned back | Mint on **Polygon** (low‑fee) + **Immutable X** for premium assets; integrate via **Enjin SDK** and **WalletConnect** |
+| **Hybrid tokenomics** – NFT + in‑game ERC‑20 | Provides a “play‑to‑earn” loop that drives retention and secondary‑market liquidity | 2 % of every in‑app purchase is funneled into a **Gold‑token** pool distributed to NFT‑C owners |
+| **Clear fundraising mix** – pre‑sale, private round, grants, community crowdfunding | Diversifies capital sources and reduces reliance on any single investor type | Target **€ 700 k** (see budget) with a realistic timeline of 5‑6 months to launch |
+| **Regulatory‑safe design** – NFTs classified as **utility tokens**, KYC/AML only for large‑ticket sales | Keeps the project out of the securities‑law grey zone in the EU and US | Legal audit, geo‑blocking, and optional KYC flow for purchases > € 10 k |
+
+The result is a **self‑sustaining ecosystem**: players who buy NFTs obtain measurable in‑game benefits, generate secondary‑market activity, and increase the Lifetime Value (LTV) of every user.
+
+---
+
+## 2. NFT Utility Catalog  
+
+| NFT Type | Description | Player Benefits | Monetisation Model |
+|----------|-------------|----------------|--------------------|
+| **A – Imperial Crown** *(1‑off, ultra‑rare, 100 copies)* | A unique, non‑fungible token that represents “royal patronage”. | • **30 % discount** on all IAPs (capped at € 30 per purchase)<br>• **+15 % win‑rate** in PvP matchmaking<br>• Exclusive 3‑D crown skin | Direct **pre‑sale** at € 150‑€ 200 each + 5 % royalty on every resale |
+| **B – Master Scroll** *(semi‑fungible, 1 000 copies, ERC‑1155)* | A “subscription‑style” token that can be held indefinitely. | • **10 % discount** on IAPs (stackable with A)<br>• Every **5th crafting** free (materials refunded)<br>• Access to a **unique master‑craft quest** | Sold in **bundle packs** (3‑for‑€ 120, 10‑for‑€ 350) + secondary‑market trades |
+| **C – Conquest Map** *(dynamic NFT, 2 500 copies)* | Token ID stores a mutable “resource‑yield multiplier”. | • **+20 % resource extraction** from mines & farms<br>• **+10 % clan‑war contribution** score<br>• Earn **Gold‑tokens** (ERC‑20) proportional to activity (≈ 2 % of total IAP pool) | Fixed price € 80, later tradable. Play‑to‑Earn component incentivises daily log‑ins. |
+| **D – Collector Hero** *(NFT‑hero, 5 000 copies, ERC‑721)* | A character card with unique passive income and a special ability. | • **Daily Gold stipend** (≈ 5 % of average spend per day)<br>• **Exclusive skill** that boosts a specific troop type<br>• Can be **staked** to earn additional Gold‑tokens | Initial price € 30‑€ 60, 5 % royalty on all resales. Optional “hero‑skin” upgrades purchasable with Gold‑tokens. |
+
+*All benefits are **soft‑capped** to protect game balance (e.g., max total discount = 30 %).*
+
+---
+
+## 3. Tokenomics & Revenue Flow  
+
+### 3.1 Supply & Pricing  
+
+| NFT Type | Total Supply | Primary Sale Price (EUR) | Expected Primary Revenue |
+|----------|--------------|--------------------------|--------------------------|
+| A | 100 | 150‑200 | € 15 k‑20 k |
+| B | 1 000 | 120 (3‑pack) / 350 (10‑pack) | € 120 k |
+| C | 2 500 | 80 | € 200 k |
+| D | 5 000 | 30‑60 | € 180 k‑300 k |
+| **Total Primary** | 8 600 | — | **≈ € 515 k‑€ 620 k** |
+
+### 3.2 Secondary‑Market Royalties  
+
+* **5 %** royalty on **every** resale (automatically paid to the **project treasury**).  
+* Forecasted secondary volume (first 12 months) = **€ 150 k** → **€ 7.5 k** royalty income.
+
+### 3.3 Play‑to‑Earn Gold‑Token Pool  
+
+* **2 %** of *all* in‑app purchases (including those made by non‑NFT players) is minted as **Gold‑tokens** (ERC‑20 on Polygon).  
+* Distribution: **70 %** to active NFT‑C owners (pro‑rata to resource extraction); **30 %** to a community‑governance fund for future events.
+
+### 3.4 LTV Impact  
+
+| Segment | Baseline LTV (EUR) | LTV with NFT (average) | Incremental Revenue |
+|---------|-------------------|------------------------|---------------------|
+| Free‑to‑play (no NFT) | 8 | — | — |
+| NFT‑A holder | 8 → 12 (+€ 4) | +50 % |
+| NFT‑B holder | 8 → 10 (+€ 2) | +25 % |
+| NFT‑C holder | 8 → 11 (+€ 3) | +38 % |
+| NFT‑D holder | 8 → 9 (+€ 1) | +13 % |
+
+**Result:** Even a modest 15 % penetration of NFT‑A/B/C/D yields **+€ 120 k** incremental revenue in Year 1.
+
+---
+
+## 4. Blockchain & Infrastructure Choice  
+
+| Requirement | Recommended Solution | Rationale |
+|-------------|----------------------|-----------|
+| **Low transaction cost** | **Polygon (MATIC)** | Average gas ≈ $0.001; mature tooling, EVM‑compatible. |
+| **Zero‑gas mint for premium assets** | **Immutable X (Layer‑2 on Ethereum)** | Gas‑free mint & trade for high‑value NFTs (A & C). |
+| **Unity integration** | **Enjin SDK** (supports Polygon & Immutable X) | One‑click asset rendering, built‑in wallet support. |
+| **Wallet connectivity on mobile** | **WalletConnect** + **Web3Auth** fallback | Works with MetaMask, Trust, Coinbase, Rainbow. |
+| **Backend data access** | **Alchemy** (Polygon) + **Moralis** (real‑time events) | Fast JSON‑RPC, webhook support for transfer events. |
+| **Caching** | **Redis** (TTL 5 min) | Reduces blockchain query load. |
+| **Security audit** | **ConsenSys Diligence** + **PeckShield** | Two‑stage audit (contract & integration). |
+
+---
+
+## 5. Architecture – Verifying NFT Ownership  
+
+### 5.1 High‑Level Flow  
+
+```
++----------------+       1. Connect Wallet (WalletConnect)      +----------------+
+|   Mobile UI    | ------------------------------------------> |   Wallet App   |
++----------------+                                            +----------------+
+        ^                                                          |
+        | 2. Sign nonce (on‑device)                               |
+        |                                                          v
++----------------+       3. Send (address, signature, nonce)   +----------------+
+|   Game Client  | ----------------------------------------> |   Backend API |
++----------------+                                            +----------------+
+        ^                                                          |
+        | 4. Verify signature & query blockchain (Alchemy)         |
+        |                                                          v
++----------------+       5. Return JWT with NFT payload       +----------------+
+|   Backend API  | <---------------------------------------- |   Blockchain   |
++----------------+                                            +----------------+
+        ^                                                          |
+        | 6. Store JWT locally (secure storage)                     |
+        v                                                          v
++----------------+       7. Attach JWT to future IAP / game   +----------------+
+|   Game Client  | <---------------------------------------- |   Game Server |
++----------------+                                            +----------------+
+```
+
+### 5.2 Technical Details  
+
+| Component | Tech Stack | Key Functions |
+|-----------|------------|---------------|
+| **Auth UI** | Unity UI + WalletConnect SDK | Prompt user, display QR / deep‑link, request connection. |
+| **Signature** | `eth_personalSign(message, address)` | One‑time nonce (UUID + timestamp) prevents replay attacks. |
+| **Backend** | Node.js / Express + **ethers.js** | Verify signature, call `balanceOf` / `tokenOfOwnerByIndex` / custom `tokenType` view. |
+| **Cache** | Redis (TTL 300 s) | Store `address → ownedNFTs` mapping to avoid repeated RPC calls. |
+| **JWT** | HS256 (secret stored in Vault) | Payload: `{ address, owned: [{id, type}], iat, exp }`. |
+| **Unity** | `UnityWebRequest` + **JWTManager** script | Attach JWT to all HTTP calls (IAP validation, bonus activation). |
+| **Server‑side IAP validation** | Verify Google/Apple receipt **AND** apply NFT discounts based on JWT. | Guarantees that discounts cannot be spoofed client‑side. |
+
+#### Sample Backend Snippet (Node.js)
+
+```js
+const { ethers } = require('ethers');
+const provider = new ethers.providers.AlchemyProvider('matic', process.env.ALCHEMY_KEY);
+const nft = new ethers.Contract(process.env.NFT_ADDRESS, NFT_ABI, provider);
+const redis = require('redis').createClient();
+
+async function getOwnedNFTs(address) {
+  const cached = await redis.get(address);
+  if (cached) return JSON.parse(cached);
+
+  const balance = await nft.balanceOf(address);
+  const ids = [];
+  for (let i = 0; i < balance; i++) {
+    const tokenId = await nft.tokenOfOwnerByIndex(address, i);
+    const type = await nft.tokenType(tokenId); // custom view returns 'A'|'B'|'C'|'D'
+    ids.push({ tokenId: tokenId.toString(), type });
+  }
+  await redis.setEx(address, 300, JSON.stringify(ids));
+  return ids;
+}
+```
+
+#### Unity Example (C#)
+
+```csharp
+public IEnumerator Authenticate(string address, string signature, string nonce) {
+    string url = $"{BASE_URL}/auth?addr={address}&sig={signature}&nonce={nonce}";
+    using (UnityWebRequest request = UnityWebRequest.Get(url)) {
+        yield return request.SendWebRequest();
+        if (request.result != UnityWebRequest.Result.Success) {
+            Debug.LogError($"Auth failed: {request.error}");
+            yield break;
+        }
+        string jwt = request.downloadHandler.text;
+        PlayerPrefs.SetString("GAME_JWT", jwt);
+        Debug.Log("Auth successful, JWT stored.");
+    }
+}
+```
+
+---
+
+## 6. Unity Integration Blueprint  
+
+| Feature | Enjin / Unity Package | Implementation Steps |
+|---------|----------------------|----------------------|
+| **Wallet connection** | `Enjin WalletConnect` | Add a “Connect Wallet” button → launch WalletConnect session. |
+| **NFT rendering** | `Enjin Unity SDK` (supports 3‑D models & skins) | Import NFT asset bundles, bind to `EnjinItem` components. |
+| **IAP price adjustments** | Custom `DiscountManager` script | On receipt validation, query JWT → apply 10 %/30 % discount before granting purchase. |
+| **Dynamic bonuses (resource multiplier)** | `GameEventSystem` + `TokenBonus` component | On resource collection, check if player owns NFT‑C → multiply reward. |
+| **Passive income (Gold‑token)** | `GoldTokenManager` (ERC‑20 client) | Periodic `balanceOf` call for player address; credit in‑game gold. |
+| **Secondary‑market UI** | `OpenSea SDK` (via WebView) or custom marketplace UI using Immutable X API | Show “My NFTs”, “Buy/Sell”, “Transfer”. |
+| **Server‑side security** | Backend verification of every IAP receipt + JWT | Prevents client‑side tampering; ensures discount eligibility is genuine. |
+
+*All blockchain‑related calls are **asynchronous** and **cached** to keep frame‑rate > 60 fps on Android/iOS.*
+
+---
+
+## 7. Development Roadmap (Gantt‑style)
+
+| Phase | Duration | Milestones | Owner |
+|-------|----------|------------|-------|
+| **0️⃣ Concept & Legal** | 2 weeks | Tokenomics finalised, legal opinion on utility‑token status, KYC policy drafted | PM + Legal |
+| **1️⃣ Smart‑Contract Layer** | 4 weeks | ERC‑721 (A/D), ERC‑1155 (B), Dynamic ERC‑721 (C), ERC‑20 Gold‑token, **audit** (2 rounds) | Blockchain Lead |
+| **2️⃣ Backend & Auth** | 3 weeks (overlaps with #1) | API gateway, JWT issuance, Redis cache, webhook for transfer events | Backend Lead |
+| **3️⃣ Unity Core** | 5 weeks | WalletConnect UI, Enjin SDK integration, IAP discount logic, resource‑multiplier hooks | Unity Lead |
+| **4️⃣ QA & Security** | 2 weeks | End‑to‑end functional tests, penetration test, load test of auth service | QA Team |
+| **5️⃣ Closed Beta (Testnet)** | 2 weeks | 2 000 invited players, feedback loop, bug‑fix sprint | Community Manager |
+| **6️⃣ Marketing & Pre‑sale** | 4 weeks (runs in parallel with #5) | NFT art drops, Discord/Telegram community launch, influencer teaser videos | Marketing |
+| **7️⃣ Mainnet Launch** | 1 week | Mint on Polygon/Immutable X, switch to production API, go‑live on stores | All |
+| **8️⃣ Post‑Launch Ops** | 12 months (ongoing) | Weekly events, new NFT series, balance updates, community governance | Ops + Live Team |
+
+**Total Time to Market:** **≈ 22 weeks** (≈ 5.5 months).  
+
+---
+
+## 8. Budget Breakdown (EUR)
+
+| Category | Cost | Rationale |
+|----------|------|-----------|
+| **Smart‑contract dev & audits** | **€ 110 k** | 2 senior Solidity engineers + 2 external audit firms (ConsenSys, PeckShield). |
+| **Backend (Node/Redis/Alchemy)** | **€ 120 k** | 2 developers, 1 DevOps, 3 months of cloud hosting (AWS + Redis). |
+| **Unity Development** | **€ 160 k** | 3 Unity engineers, UI/UX artist, integration of Enjin & WalletConnect. |
+| **Art & 3‑D Assets** | **€ 85 k** | 10 concept artists, 4 3‑D modelers, animation rigs for NFT‑C maps & hero skins. |
+| **Marketing & Community** | **€ 150 k** | Influencer contracts (10 × € 5 k), Discord moderation, teaser videos, paid media. |
+| **Legal & Compliance** | **€ 45 k** | KYC provider (Jumio), GDPR audit, IP licensing. |
+| **Contingency (10 %)** | **€ 50 k** | Unforeseen technical or regulatory costs. |
+| **TOTAL** | **≈ € 720 k** | Gives a comfortable buffer to reach the **€ 800 k** ceiling if needed. |
+
+*If the fundraising target is at the low‑end (€ 500 k), the scope can be trimmed by reducing art‑asset count (e.g., fewer hero skins) and scaling down the influencer budget.*
+
+---
+
+## 9. Fundraising Strategy  
+
+| Source | Instrument | Target Amount | Remarks |
+|--------|------------|----------------|---------|
+| **Pre‑sale NFT (A & B)** | Private auction on Immutable X + Discord whitelist | **€ 120 k** | Early‑bird pricing, 5 % royalty for treasury. |
+| **Strategic Private Round** | Equity‑free token‑royalty deal (5 % secondary royalty) | **€ 250 k** | Target game publishers, blockchain funds. |
+| **Blockchain Grants** | Polygon Ecosystem Fund, Enjin Grant Program | **€ 30 k** | Requires demo & roadmap. |
+| **Community Crowdfunding** | Kickstarter / Fig with NFT‑reward tiers | **€ 120 k** | Offers exclusive in‑game titles + early access. |
+| **VC Seed** | Play‑to‑earn focused VCs (e.g., Play Ventures, Galaxy Interactive) | **€ 200 k** | Pitch deck emphasises utility‑first NFT model, LTV uplift. |
+
+**Total Potential Funding:** **≈ € 720 k** – comfortably within the target band.
+
+---
+
+## 10. Marketing & Community Blueprint  
+
+| Phase | Activity | KPI |
+|-------|----------|-----|
+| **Pre‑launch (Weeks -8 → -1)** | Teaser trailer, white‑paper release, Discord server launch, AMA series | 5 k Discord members, 30 k video views |
+| **NFT Drop Campaign** | 3 timed auctions (A, B, C) with exclusive Discord roles | 80 % of allocated NFTs sold within 48 h each |
+| **Influencer Partnerships** | 10 gaming & crypto creators (average reach 500 k) | 150 k cumulative views, 10 k referral clicks |
+| **Beta Access** | Invite‑only closed beta, “Founders” badge for NFT owners | 90 % DAU retention during beta |
+| **Launch Week** | In‑game “Conquest Week” event, bonus Gold‑tokens for NFT‑C owners, cross‑promo with crypto exchanges | +25 % Day‑1 installs, 40 % of new players purchase at least one NFT |
+| **Post‑Launch** | Monthly “NFT Showcase”, community governance polls (use Gold‑token), seasonal leaderboards | 30 % month‑over‑month active NFT holders, 5 % LTV increase per quarter |
+
+---
+
+## 11. Legal & Regulatory Safeguards  
+
+| Issue | Solution |
+|-------|----------|
+| **NFT classification** | Explicitly marketed as **utility** (discounts, in‑game bonuses) – no claim of profit‑sharing or equity. |
+| **KYC/AML** | Required only for purchases > € 10 k (private round) and for players who cash‑out Gold‑tokens to fiat. Integrated via **Jumio** API. |
+| **GDPR** | Store only wallet address & minimal email; encrypt data at rest; provide right‑to‑erasure via support ticket. |
+| **Age rating** | Game rated **12+**; NFT purchases gated by age verification (self‑asserted DOB + parental consent for minors). |
+| **Intellectual property** | All NFT artwork licensed under **CC‑BY‑NC‑SA** for in‑game display; resale rights retained by owners. |
+| **Tax compliance** | Partner with a crypto‑tax advisory firm to generate user‑friendly transaction reports (for EU & US). |
+
+---
+
+## 12. Risk Matrix & Mitigation  
+
+| Risk | Probability | Impact | Mitigation |
+|------|-------------|--------|------------|
+| **Regulatory crackdown on NFTs** | Medium | High (could force removal) | Design NFTs as *utility*; keep ability to disable discounts via server flag; maintain a “pure” free‑to‑play mode. |
+| **Network congestion** | Low (Polygon) | Medium (delayed mint/transfer) | Use **meta‑transactions** (gas‑less for users) and batch minting for bulk drops. |
+| **Pay‑to‑win perception** | Medium | High (player churn) | Cap discounts (max 30 %); balance via skill‑based PvP matchmaking; regular free‑to‑play events. |
+| **Smart‑contract bugs** | Low (audit) | High (fund loss) | Dual‑audit + bug‑bounty program (minimum € 5 k). |
+| **Low secondary‑market liquidity** | Medium | Medium | List NFTs on **OpenSea**, **Immutable X Marketplace**, and build an in‑game auction house. |
+| **Server overload on auth spikes** | Low | Medium | Autoscaling on AWS (Lambda + API Gateway) + Redis cache; load‑test with 10 k concurrent auths. |
+
+---
+
+## 13. Success Metrics (KPIs)
+
+| Metric | Target (12 months) | Reason |
+|--------|--------------------|--------|
+| **NFT Primary Sales** | € 550 k | Covers 75 % of budget. |
+| **Secondary‑Market Volume** | € 200 k | Indicates healthy liquidity and community interest. |
+| **DAU (daily active users)** | 250 k | 2× pre‑launch baseline. |
+| **Retention (Day 30)** | 45 % | Above industry average for mobile strategy games. |
+| **Average Revenue Per Paying User (ARPPU)** | € 25 | Boosted by NFT discounts and Gold‑token incentives. |
+| **Gold‑token circulation** | 10 M tokens | Reflects active play‑to‑earn loop. |
+| **Community Size (Discord)** | 30 k members | Critical for organic growth and feedback. |
+
+---
+
+## 14. Conclusion  
+
+By **centering NFTs on real in‑game utility**, using a **low‑cost, scalable blockchain stack**, and coupling the launch with a **well‑structured fundraising and marketing plan**, the project can:
+
+1. **Secure € 500‑800 k** while maintaining a lean development budget.  
+2. **Deliver measurable economic benefits** to NFT holders, creating a self‑reinforcing loop of purchase → play → earn → resale.  
+3. **Preserve game balance** and avoid “pay‑to‑win” backlash through capped discounts and skill‑based matchmaking.  
+4. **Stay compliant** with EU/US regulations by treating NFTs as utility tokens and applying KYC only where legally required.  
+
+The roadmap, budget, and risk mitigation strategy presented above provide a clear path from concept to a **live, revenue‑generating product** within **six months**.  
+
+---  
+
+*Prepared by: [Your Studio / Team]*  
+*Date: 7 Oct 2025*  

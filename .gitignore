@@ -1,0 +1,217 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Hardhat build outputs
+artifacts/
+cache/
+typechain-types/
+typechain/
+
+# Smart contract build artifacts
+smart-contracts/artifacts/
+smart-contracts/cache/
+smart-contracts/typechain-types/
+smart-contracts/typechain/
+
+# Package lock files (keep one, ignore others)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.testnet
+.env.mainnet
+
+# Hardhat network files
+.openzeppelin/
+
+# Coverage reports
+coverage/
+coverage.json
+.nyc_output/
+
+# Gas reports
+gas-report.txt
+
+# Solidity compiler outputs
+*.abi
+*.bin
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Temporary folders
+tmp/
+temp/
+.tmp/
+
+# Build outputs
+dist/
+build/
+out/
+
+# Test results
+test-results/
+coverage/
+
+# Documentation build outputs
+docs/_build/
+docs/build/
+
+# Generated images and output
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.tiff
+*.svg
+
+# Analysis and automation tool outputs
+analysis-results/
+*.analysis.json
+*.vision.json
+puppeteer-*.log
+automation-*.log
+
+# Nix shell artifacts
+.direnv/
+result
+.direnvrc
+
+# Temporary files
+temp-*
+*.tmp
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rpt2_cache_umd/
+
+# Parcel cache
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Grunt intermediate storage
+.grunt
+
+# Bower dependency directory
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons
+build/Release
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env
+
+# Keep important configuration files but ignore sensitive data
+!hardhat.config.js
+!hardhat.config.ts
+!package.json
+!package-lock.json
+
+# Keep source contracts but ignore build artifacts
+!smart-contracts/contracts/
+!smart-contracts/test/
+!smart-contracts/scripts/
+!smart-contracts/deployment/
+
+# Ignore build artifacts but keep source
+smart-contracts/artifacts/
+smart-contracts/cache/
+smart-contracts/typechain-types/
+
+# Keep documentation source but ignore build outputs
+!docs/
+docs/_build/
+docs/build/
+
+# Keep reports but ignore temporary analysis files
+!docs/archive/
+!docs/current/
+!docs/drafts/
+*.analysis.json
+*.vision.json

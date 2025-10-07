@@ -1,0 +1,26 @@
+{
+  "name": "nft_and_gaming_research_086",
+  "version": "1.0.0",
+  "description": "**Project:** NFT-Utility Integration Research for Mobile RPG-Strategy Games   **Goal:** Deliver real, tradable value to NFT holders through utility-first design   **Approach:** Keep core game free‑to‑play and balanced with NFT utility benefits   **Timeline:** 5-6 months to launch",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rusty-dusty-corner/nft_and_gaming_research_086.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rusty-dusty-corner/nft_and_gaming_research_086/issues"
+  },
+  "homepage": "https://github.com/rusty-dusty-corner/nft_and_gaming_research_086#readme",
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^11.12.0"
+  }
+}

@@ -24,20 +24,20 @@ This document provides a high-level architectural overview of how the NFT Gaming
 
 ```mermaid
 graph TB
-    subgraph "🎮 Game Layer"
+    subgraph "Game Layer"
         UC[Unity Client]
         UI[Game UI]
         GP[Gameplay Logic]
     end
     
-    subgraph "🌐 Backend Layer"
+    subgraph "Backend Layer"
         API[Node.js API]
         AUTH[JWT Auth]
         CACHE[Redis Cache]
         DB[Database]
     end
     
-    subgraph "🔗 Blockchain Layer"
+    subgraph "Blockchain Layer"
         IC[Imperial Crown NFT]
         CH[Collector Hero NFT]
         MS[Master Scroll NFT]
@@ -45,7 +45,7 @@ graph TB
         GT[Gold Token]
     end
     
-    subgraph "🌍 External Services"
+    subgraph "External Services"
         OPENSEA[OpenSea]
         MARKET[Marketplaces]
         PAY[Payment Systems]
